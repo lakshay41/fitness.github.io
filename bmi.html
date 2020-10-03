@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Body Mass Index</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+	body
+	{
+		font-family: Impact, fantasy;
+		background-color: black;
+	}
+	 .main
+	{
+		background-image: url('abt.jpg');
+		height: 400px;
+		width: 100%;
+		padding-top:250px;
+		background-size: cover;
+
+	}
+	table
+	{
+		font-family: normal;
+		border:1px solid white;
+		width: 100%;
+	}
+	th,td
+	{
+		font-family: normal;
+		border:1px solid white;
+	}
+	#message
+	{
+		font-family: normal;
+		padding-bottom: 20px;
+		padding-top: 20px;
+		color: #FF7F50
+	}
+</style>
+<body>
+	<header>
+     	<a name="start"></a>
+      	<nav class="navbar navbar-expand-sm fixed-top" style="background-color:black">
+      		<div class="container">
+      		<a href="index.html"><img src="logo.png" class="navbar-brand" style="height: 100px;"></a>
+      		<a href="index.html" class="navbar-brand" style="color:white;font-size: 2.5em;font-family:DejaVu Sans Mono, monospace">FitnesS</a>
+      		<button class="navbar-toggler " data-toggle="collapse" data-target="#navid">
+      			<span class="navbar-toggler-icon"></span>
+      		</button>
+      	<div class="collapse navbar-collapse" id="navid">
+      		<ul class="navbar-nav text-center ml-auto">
+      			<li class="nav-item">
+      				<a href="index.html" class="nav-link"  style="color: white">HOME</a>
+      			</li>
+      			<li class="nav-item">
+      				<a href="aboutus.html" class="nav-link" style="color: white">ABOUT US</a>
+      			</li>
+      			<li class="nav-item">
+      				<a href="index.html#timings" class="nav-link " style="color: white">SCHEDULE</a>
+      			</li>
+      			<li class="nav-item">
+      				<a href="index.html#plans" class="nav-link" style="color: white">PLANS</a>
+      			</li>
+      			
+      			<li class="nav-item">
+      				<a href="contactus.html" class="nav-link" style="color: white">CONTACT US</a>
+      			</li>
+      			<li class="nav-item">
+      				<a href="join.html" class="nav-link" style="color: white">JOIN NOW</a>
+      			</li>
+      			<li class="nav-item">
+      				<a href="bmi.html" class="nav-link" style="color: white">BMI CALCULATOR</a>
+      			</li>
+
+      		</ul>
+      	</div>
+      	</div>
+      	</nav>
+      </header>
+      <div class="main">
+      		<h1 style="color: #FF7F50" class="text-center">BODY MASS INDEX</h1>
+      	</div>
+      	<div class="container-fluid text-white">
+      		<div class="row">
+      			<div class="col-12 col-sm-12 col-md-4 col-lg-4 text-center" style="padding-top: 100px;padding-bottom: 40px;">
+      				<table>
+      					<tr>
+      						<td colspan="2" style="font-size: 1.5em">BODY MASS INDEX TABLE</td>
+      					</tr>
+      					<tr style="font-size: 1.1em">
+      						<td>Classification</td>
+      						<td>BMI Score</td>
+      					</tr>
+      					<tr id="under">
+      						<td>Underweight</td>
+      						<td><18.5</td>
+      					</tr>
+      					<tr id="nor">
+      						<td>Normal</td>
+      						<td>18.5-24.9</td>
+      					</tr>
+      					<tr id="over">
+      						<td>Overweight</td>
+      						<td>25.0-29.0</td>
+      					</tr>
+      					<tr id="obe">
+      						<td>Obese</td>
+      						<td>30.0-40.0</td>
+      					</tr>
+      					<tr id="eobe">
+      						<td>Extreme Obese</td>
+      						<td>>40.0</td>
+      					</tr>
+      				</table>
+      			</div>
+      			<div class="col-sm-12 col-12 col-lg-8 col-md-8" style="padding-top: 50px;padding-bottom: 50px;">
+      				<form>
+      					<div class="form-group">
+      						<label for="weight">Weight:</label>
+      						<input type="text" class="form-control" id="weight" placeholder="Enter Your Weight In Kg" onkeyup="back()">
+      						<small id="validation" class="text-danger"></small>
+      					</div>
+      					<div class="form-group">
+      						<label for="height">Height:</label>
+      						<input type="text" class="form-control" id="height" placeholder="Enter Your Height In Ft" onkeyup="back()">
+      						<small id="validation1" class="text-danger"></small>
+      					</div>
+      					<div class="form-group">
+      						<label for="bmi">BMI:</label>
+      						<input type="text" class="form-control" id="bmi" placeholder="Your BMI">
+      					</div>
+      				</form><br>
+      				<div>
+      					<button class="btn btn-danger w-50" style="margin-left: 25%" onclick="myfunc()">Check</button>
+      				</div>
+      			</div>
+      			
+      		</div>
+      	</div>
+      	<div class="container-fluid text-white text-center" >
+      		<div class="container">
+      			<h3 id="message"></h3>
+      		</div>
+      	</div>
+      	<footer>
+  <div class="container-fluid bg-dark" style="padding-top: 30px;padding-bottom: 30px;">
+    <div class="container">
+     <div class="row">
+       <div class="col-sm-4 col-md-4 col-lg-4 col-12">
+         
+         <p style="font-family: normal;color: white;font-size: 1.1em" class="text-center">Despite growth of the Internet over the past seven years, the use of toll-free phone numbers in television advertising continues.</p>
+         <h4 style="color:white " class="text-center">Follow us</h4>
+                      <div class="text-center">
+                        <a class="fa fa-facebook-square" style=";color:#FF7F50;"></a>
+                        <a href="#" class="fa fa-twitter" style=";color:#FF7F50;"></a>
+                        <a href="#" class="fa fa-google" style=";color:#FF7F50;"></a>
+                        <a href="#" class="fa fa-linkedin" style=";color:#FF7F50;"></a>
+                        <a href="#" class="fa fa-youtube" style=";color:#FF7F50;"></a>
+                        <a href="#" class="fa fa-instagram" style=";color:#FF7F50;"></a>
+                      </div>
+       </div>
+       <div class="col-sm-4 col-md-4 col-lg-4 col-12">
+         <h4 style="color:#FF7F50" class="text-center">Our Services</h4>
+         <p style="color: white;font-family:normal;font-size: 1.1em" class="text-center">
+           Training Classes<br>
+           Group Classes<br>
+           BodyBuilding<br>
+           Running<br>
+           Yoga
+         </p>
+ 
+       </div>
+       <div class="col-sm-4 col-md-4 col-lg-4 col-12">
+         <h4 style="color:#FF7F50;" class="text-center">Contact us</h4>
+         <p style="color: white;font-family:normal;font-size: 1.1em" class="text-center">Phone:<br>+91-123456787654<br>Email:<br>xyz@gmail.com<br>Address:<br>Industrial area,Chandigarh</p>
+       </div>
+     </div>
+  </div>
+</div>
+</footer> 
+   <script>
+   	function myfunc()
+   	{
+   		var wi=document.getElementById('weight').value;
+   		var hi=document.getElementById('height').value;
+   		var wilen=wi.length;
+   		var hilen=hi.length;
+  
+   		if(wi==""&&hi!="")
+   		{
+   			document.getElementById('validation').innerHTML="Please fill this field out.";
+   			document.getElementById('validation1').innerHTML="";
+   		}
+   		else if(hi==""&&wi!="")
+   		{
+   			document.getElementById('validation1').innerHTML="Please fill this field out.";
+   			document.getElementById('validation').innerHTML="";
+   		}
+   		if(wi=="")
+   		{
+   			document.getElementById('validation').innerHTML="Please fill this field out.";
+   		}
+   		else if(hi=="")
+   		{
+   			document.getElementById('validation1').innerHTML="Please fill this field out.";
+   		}
+   		else if(wilen>3&&hilen<=3)
+   		{
+
+   			document.getElementById('validation').innerHTML="Please fill correct value.";
+   			document.getElementById('validation1').innerHTML="";
+   		}
+   		else if(wilen<=3&&hilen>3)
+   		{
+
+   			document.getElementById('validation1').innerHTML="Please fill correct value.";
+   			document.getElementById('validation').innerHTML="";
+   		}
+   		else if(wilen>3)
+   		{
+   			document.getElementById('validation').innerHTML="Please fill correct value.";
+   		}
+   		else if(hilen>3)
+   		{
+   			document.getElementById('validation1').innerHTML="Please fill correct value.";
+   		}
+   		else
+   		{
+   			document.getElementById('validation').innerHTML="";
+   			document.getElementById('validation1').innerHTML="";
+   			var newhi=0;
+   		var newbmi;
+   		hi=hi*0.3048;
+   		newhi=newhi+Math.pow(hi,2);
+   		newbmi=wi/newhi;
+   		newbmi=Math.round(newbmi);
+   		document.getElementById('bmi').value=newbmi;
+   		if(newbmi<18.5)
+   		{
+   			document.getElementById('under').style.backgroundColor="red";
+   			document.getElementById('message').innerHTML="Welcome To the Fitness World, Your BMI is "+newbmi+" . You can join our Gym to gain weight with diet plans prepared by our experts."
+   		}
+   		else if(newbmi>=18.5&&newbmi<=24.9)
+   		{
+   			document.getElementById('nor').style.backgroundColor="grey";
+   			document.getElementById('message').innerHTML="Welcome To the Fitness World, Your BMI is "+newbmi+" . You can join our Gym to gain abs to impress girls."
+   		}
+
+   		else if(newbmi>=25&&newbmi<=29)
+   		{
+   			document.getElementById('over').style.backgroundColor="red";
+   			document.getElementById('message').innerHTML="Welcome To the Fitness World, Your BMI is "+newbmi+" . You can join our Gym to loose weight and show to world what you can do."
+   		}
+   		else if(newbmi>=30&&newbmi<=40)
+   		{
+   			document.getElementById('obe').style.backgroundColor="red";
+   			document.getElementById('message').innerHTML="Welcome To the Fitness World, Your BMI is "+newbmi+" .You consult to a doctor and join our Gym to loose weight and get trained under our expert team."
+   		}
+   		else if(newbmi>40)
+   		{
+   			document.getElementById('eobe').style.backgroundColor="red";
+   			document.getElementById('message').innerHTML="Welcome To the Fitness World, Your BMI is "+newbmi+" .You imidiately consult to a doctor and join our Gym to loose weight and get trained under our expert team."
+   		}
+
+   		}
+
+   	}
+   	function back()
+   	{
+   		document.getElementById('under').style.backgroundColor="black";
+   		document.getElementById('nor').style.backgroundColor="black";
+   		document.getElementById('over').style.backgroundColor="black";
+   		document.getElementById('obe').style.backgroundColor="black";
+   		document.getElementById('eobe').style.backgroundColor="black";
+   		document.getElementById('message').innerHTML="";
+
+
+   	}
+   </script>
+
+</body>
+</html>
