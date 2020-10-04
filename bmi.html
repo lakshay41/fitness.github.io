@@ -45,44 +45,44 @@
 	}
 </style>
 <body>
-	<header>
-     	<a name="start"></a>
-      	<nav class="navbar navbar-expand-sm fixed-top" style="background-color:black">
-      		<div class="container">
-      		<a href="index.html"><img src="logo.png" class="navbar-brand" style="height: 100px;"></a>
-      		<a href="index.html" class="navbar-brand" style="color:white;font-size: 2.5em;font-family:DejaVu Sans Mono, monospace">FitnesS</a>
-      		<button class="navbar-toggler " data-toggle="collapse" data-target="#navid">
-      			<span class="navbar-toggler-icon"></span>
-      		</button>
-      	<div class="collapse navbar-collapse" id="navid">
-      		<ul class="navbar-nav text-center ml-auto">
-      			<li class="nav-item">
-      				<a href="index.html" class="nav-link"  style="color: white">HOME</a>
-      			</li>
-      			<li class="nav-item">
-      				<a href="aboutus.html" class="nav-link" style="color: white">ABOUT US</a>
-      			</li>
-      			<li class="nav-item">
-      				<a href="index.html#timings" class="nav-link " style="color: white">SCHEDULE</a>
-      			</li>
-      			<li class="nav-item">
-      				<a href="index.html#plans" class="nav-link" style="color: white">PLANS</a>
-      			</li>
-      			
-      			<li class="nav-item">
-      				<a href="contactus.html" class="nav-link" style="color: white">CONTACT US</a>
-      			</li>
-      			<li class="nav-item">
-      				<a href="join.html" class="nav-link" style="color: white">JOIN NOW</a>
-      			</li>
-      			<li class="nav-item">
-      				<a href="bmi.html" class="nav-link" style="color: white">BMI CALCULATOR</a>
-      			</li>
+   <header>
+      <a name="start"></a>
+         <nav class="navbar navbar-expand-sm fixed-top" style="background-color:black">
+            <div class="container">
+            <a href="index.html"><img src="logo.png" class="navbar-brand" style="height: 100px;"></a>
+            <a href="index.html" class="navbar-brand" style="color:white;font-size: 2.5em;font-family:DejaVu Sans Mono, monospace">FitnesS</a>
+            <button class="navbar-toggler " data-toggle="collapse" data-target="#navid">
+               <span class="navbar-toggler-icon"></span>
+            </button>
+         <div class="collapse navbar-collapse" id="navid">
+            <ul class="navbar-nav text-center ml-auto">
+               <li class="nav-item">
+                  <a href="index.html" class="nav-link"  style="color: white">HOME</a>
+               </li>
+               <li class="nav-item">
+                  <a href="aboutus.html" class="nav-link" style="color: white">ABOUT US</a>
+               </li>
+               <li class="nav-item">
+                  <a href="index.html#timings" class="nav-link " style="color: white">SCHEDULE</a>
+               </li>
+               <li class="nav-item">
+                  <a href="index.html#plans" class="nav-link" style="color: white">PLANS</a>
+               </li>
+               
+               <li class="nav-item">
+                  <a href="contactus.html" class="nav-link" style="color: white">CONTACT US</a>
+               </li>
+               <li class="nav-item">
+                  <a href="join.html" class="nav-link" style="color: white">JOIN NOW</a>
+               </li>
+               <li class="nav-item">
+              <a href="bmi.html" class="nav-link" style="color: white">BMI CALCULATOR</a>
+            </li>
 
-      		</ul>
-      	</div>
-      	</div>
-      	</nav>
+            </ul>
+         </div>
+         </div>
+         </nav>
       </header>
       <div class="main">
       		<h1 style="color: #FF7F50" class="text-center">BODY MASS INDEX</h1>
@@ -149,7 +149,7 @@
       			<h3 id="message"></h3>
       		</div>
       	</div>
-      	<footer>
+         <footer>
   <div class="container-fluid bg-dark" style="padding-top: 30px;padding-bottom: 30px;">
     <div class="container">
      <div class="row">
@@ -185,6 +185,7 @@
   </div>
 </div>
 </footer> 
+       
    <script>
    	function myfunc()
    	{
@@ -211,13 +212,13 @@
    		{
    			document.getElementById('validation1').innerHTML="Please fill this field out.";
    		}
-   		else if(wilen>3&&hilen<=3)
+   		else if(wilen>3&&hilen<=4)
    		{
 
    			document.getElementById('validation').innerHTML="Please fill correct value.";
    			document.getElementById('validation1').innerHTML="";
    		}
-   		else if(wilen<=3&&hilen>3)
+   		else if(wilen<=3&&hilen>4)
    		{
 
    			document.getElementById('validation1').innerHTML="Please fill correct value.";
@@ -227,10 +228,28 @@
    		{
    			document.getElementById('validation').innerHTML="Please fill correct value.";
    		}
-   		else if(hilen>3)
+   		else if(hilen>4)
    		{
    			document.getElementById('validation1').innerHTML="Please fill correct value.";
    		}
+         else if(!isNaN(hi)&&isNaN(wi))
+         {
+            document.getElementById('validation').innerHTML="Characters not allowed.";
+            document.getElementById('validation1').innerHTML="";
+         }
+         else if(isNaN(hi)&&!isNaN(wi))
+         {
+            document.getElementById('validation1').innerHTML="Characters not allowed.";
+            document.getElementById('validation').innerHTML="";
+         }
+         else if(isNaN(hi))
+         {
+            document.getElementById('validation').innerHTML="Characters not allowed.";
+         }
+         else if(isNaN(wi))
+         {
+            document.getElementById('validation1').innerHTML="Characters not allowed.";
+         }
    		else
    		{
    			document.getElementById('validation').innerHTML="";
